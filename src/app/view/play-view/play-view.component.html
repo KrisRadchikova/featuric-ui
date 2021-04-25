@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="header">
+    <h1>
+      Вопрос {{questionNumber + 1}} из {{quantityQuestion}}
+    </h1>
+  </div>
+  <mat-card class="card">
+    <div class="title">
+      <div class="question_name">
+        <h2>{{question?.name}}</h2>
+      </div>
+      <div class="time">
+        <countdown #timer [config]="{leftTime: 15, format: 'mm:ss'}" (event)="timerEvent($event)"></countdown>
+      </div>
+    </div>
+    <div class="image" *ngIf="question?.image">
+      <!--      <img src="{{question?.image}}" alt="Photo from Amazon S3"-->
+      <!--           style="margin-left: 30px; margin-top: 20px; width: 750px; height: 400px;">-->
+    </div>
+    <div class="body">
+      <div>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="answer">
+          <mat-radio-button class="example-radio-button" disabled="{{isDisabled()}}"
+                            *ngFor="let answer of question?.answers" [value]="answer">
+            {{answer?.name}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="action">
+      <div *ngIf="answer && !timeIsOver; else blockButtonReply" class="myButtons">
+        <button mat-flat-button color="warn" (click)="addAnswer()"
+                disabled="{{isBlockAnswers}}">Ответить
+        </button>
+      </div>
+      <ng-template #blockButtonReply>
+        <div *ngIf="answeredQuestion == quantityQuestion; else nextQuestionOrBlockButtonReply">
+          <button mat-flat-button class="statistics" color="accent">
+            Статистика
+          </button>
+        </div>
+      </ng-template>
+      <ng-template #nextQuestionOrBlockButtonReply>
+        <div *ngIf="timeIsOver; else timerIsOver">
+          <button mat-flat-button color="primary"
+                  (click)="setNextQuestion();timer.restart();">Далее
+          </button>
+        </div>
+        <ng-template #timerIsOver>
+          <button mat-flat-button class="myButtons" color="warn"
+                  disabled>Ответить
+          </button>
+        </ng-template>
+      </ng-template>
+    </div>
+  </mat-card>
+
+  <div class="player-board">
+    <mat-card class="players">
+      <div>
+        <div class="name-player">
+          <h4>Юзер</h4>
+        </div>
+        <div class="legs">
+          <div *ngFor="let i of index">
+            <mat-card class="index" style="background: gray">
+              {{i + 1}}
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

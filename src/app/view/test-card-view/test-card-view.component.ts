@@ -18,7 +18,8 @@ export class TestCardViewComponent implements OnInit {
   @Input()
   categories: Category[];
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -29,6 +30,10 @@ export class TestCardViewComponent implements OnInit {
       data: {test: startTest}
     });
 
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe(testId => {
+      if (testId) {
+        this.router.navigateByUrl('/test_beginning/' + testId).then();
+      }
+    });
   }
 }

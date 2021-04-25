@@ -1,6 +1,5 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dialog-content-example-dialog',
@@ -9,11 +8,10 @@ import {Router} from '@angular/router';
 export class DialogContentExampleDialogComponent {
 
   constructor(public dialogRef: MatDialogRef<DialogContentExampleDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: { test },
-              private router: Router) {
+              @Inject(MAT_DIALOG_DATA) public data: { test }) {
   }
 
-  redirect(url: string): void {
-    this.router.navigate([url]);
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

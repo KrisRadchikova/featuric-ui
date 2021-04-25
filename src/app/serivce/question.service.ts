@@ -1,14 +1,14 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Test} from '../model/test';
+import {Question} from '../model/question';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TestService {
+export class QuestionService {
 
-  url = '/api/test/';
+  url = '/api/question/';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -17,11 +17,8 @@ export class TestService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<Test[]> {
-    return this.http.get<Test[]>(this.url + 'getAll');
-  }
-
-  getTestById(id: number): Observable<Test> {
-    return this.http.get<Test>(this.url + id);
+  // TODO add method in back
+  getQuestionsByTestId(testId: number): Observable<Question[]> {
+    return this.http.get<Question[]>(this.url + testId);
   }
 }
