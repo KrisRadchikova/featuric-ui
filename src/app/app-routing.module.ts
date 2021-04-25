@@ -6,7 +6,8 @@ import {TestsCatalogPageComponent} from './page/tests-catalog-page/tests-catalog
 const routes: Routes = [
 
   {path: 'start', component: StartPageComponent},
-  {path: 'tests_catalog', component: TestsCatalogPageComponent}
+  {path: 'tests_catalog', component: TestsCatalogPageComponent},
+  {path: '**', redirectTo: 'start'}
 
 ];
 

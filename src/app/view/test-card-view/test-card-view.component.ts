@@ -1,5 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Test} from '../../model/test';
+import {Category} from '../../model/category';
+import {Router} from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogContentExampleDialogComponent} from './dialog/dialog-content-example-dialog';
 
 @Component({
   selector: 'app-test-card-view',
@@ -9,12 +13,22 @@ import {Test} from '../../model/test';
 export class TestCardViewComponent implements OnInit {
 
   @Input()
-  test: Test;
+  tests: Test[];
 
-  constructor() {
+  @Input()
+  categories: Category[];
+
+  constructor(public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
   }
 
+  openDialog(startTest: Test): void {
+    const dialogRef = this.dialog.open(DialogContentExampleDialogComponent, {
+      data: {test: startTest}
+    });
+
+    dialogRef.afterClosed().subscribe();
+  }
 }

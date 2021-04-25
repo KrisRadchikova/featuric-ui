@@ -1,6 +1,7 @@
-<app-tool-bar></app-tool-bar>
-<div *ngFor="let test of tests">
+<app-tool-bar
+  [categories]="categories"
+  [isSidenav]=true>
   <app-test-card-view
-    [test]="test">
+    [tests]="tests">
   </app-test-card-view>
-</div>
+</app-tool-bar>

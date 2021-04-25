@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{data?.test?.name}}</h2>
+<mat-dialog-content class="mat-typography">
+  <p>{{data?.test?.description}}</p>
+  <p>1.</p>
+  <p>2.</p>
+  <p>3.</p>
+  <p>4.</p>
+  <p>5.</p>
+  <p>6.</p>
+  <p>7.</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Отмена</button>
+  <button mat-button (click)="redirect('/test_beginning/' + data?.test?.id)" cdkFocusInitial >Начать</button>
+</mat-dialog-actions>

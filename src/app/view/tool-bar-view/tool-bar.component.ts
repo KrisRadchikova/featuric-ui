@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-tool-bar',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolBarComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  isSidenav: boolean;
+
+  @Input()
+  categories: Category[];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  copyLink(): void {
+  }
 }

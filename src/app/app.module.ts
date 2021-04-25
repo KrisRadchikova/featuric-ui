@@ -8,17 +8,23 @@ import {AppComponent} from './app.component';
 import {ToolBarComponent} from './view/tool-bar-view/tool-bar.component';
 import {StartPageComponent} from './page/start-page/start-page.component';
 import {LoaderViewComponent} from './view/loader-view/loader-view.component';
+import {TestsCatalogPageComponent} from './page/tests-catalog-page/tests-catalog-page.component';
+import {TestCardViewComponent} from './view/test-card-view/test-card-view.component';
+import {CategoryViewComponent} from './view/category-view/category-view.component';
+import {DialogContentExampleDialogComponent} from './view/test-card-view/dialog/dialog-content-example-dialog';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import {LoaderService} from './serivce/loader.service';
 
 import {LoaderInterceptor} from './serivce/interceptors/loader.interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {TestsCatalogPageComponent} from './page/tests-catalog-page/tests-catalog-page.component';
-import {TestCardViewComponent} from './view/test-card-view/test-card-view.component';
+import { TestBeginningComponent } from './page/test-beginning/test-beginning.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,10 @@ import {TestCardViewComponent} from './view/test-card-view/test-card-view.compon
     StartPageComponent,
     LoaderViewComponent,
     TestsCatalogPageComponent,
-    TestCardViewComponent
+    TestCardViewComponent,
+    CategoryViewComponent,
+    DialogContentExampleDialogComponent,
+    TestBeginningComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +45,10 @@ import {TestCardViewComponent} from './view/test-card-view/test-card-view.compon
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatDialogModule
   ],
   providers: [
     LoaderService,

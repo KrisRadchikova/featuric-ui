@@ -1,3 +1,30 @@
+.sidenav-container {
+  flex: 1;
+  width: 100%;
+}
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.main-toolbar {
+  z-index: 2;
+}
+
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.size {
+  font-size: 20px;
+}
+
+.name-margin {
+  margin-left: 15px;
 }

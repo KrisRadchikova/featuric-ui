@@ -1,0 +1,16 @@
+.root-container {
+  display: flex;
+  flex-direction: row;
+  margin: 100px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 200px;
+}
+
+.test-card {
+  width: 400px;
+}
