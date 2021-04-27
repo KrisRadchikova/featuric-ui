@@ -22,8 +22,6 @@ export class TestsCatalogPageComponent implements OnInit {
   ngOnInit(): void {
     this.categoryService.getAll().subscribe(categories => {
       this.categories = categories;
-      // TODO Delete
-      this.categories = Globals.categories;
     });
     this.testService.getAll().subscribe(tests => {
       this.tests = tests;

@@ -22,7 +22,7 @@ export class TestBeginningComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(paramMap => {
       this.testId = paramMap.get('testId');
       // this.testService.getTestById(this.testId).subscribe(test => {
-      this.test = Globals.tests[0];
+      this.test = Globals.tests[this.testId - 1];
       // alert(this.test.id);
       // });
     });

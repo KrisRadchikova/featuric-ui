@@ -1,7 +1,7 @@
 .root-container {
-  display: flex;
+  //display: flex;
   flex-direction: row;
-  margin: 100px;
+  margin: 6%;
 }
 
 .card-container {
@@ -12,5 +12,13 @@
 }
 
 .test-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 400px;
+}
+
+.test-name {
+  font-size: large;
 }

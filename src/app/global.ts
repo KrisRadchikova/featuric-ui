@@ -38,7 +38,7 @@ export class Globals {
       questions: [
         {
           id: 1,
-          name: 'super mega question',
+          name: 'super mega question1',
           description: 'WTF???',
           image: 'beauty',
           answers: [
@@ -87,7 +87,7 @@ export class Globals {
       questions: [
         {
           id: 3,
-          name: 'super mega question',
+          name: 'super mega question2',
           description: 'WTF???',
           image: 'beauty',
           answers: [
@@ -136,7 +136,7 @@ export class Globals {
       questions: [
         {
           id: 5,
-          name: 'super mega question',
+          name: 'super mega question3',
           description: 'WTF???',
           image: 'beauty',
           answers: [
@@ -181,13 +181,39 @@ export class Globals {
   static questions: Question[] = [
     {
       id: 1,
-      name: 'super mega question',
+      name: 'super mega question#1',
       description: 'WTF???',
       image: 'beauty',
       answers: [
         {
           id: 1,
           name: 'WTF?',
+          description: 'super mega answer',
+          rightAnswer: true
+        },
+        {
+          id: 2,
+          name: 'мдээээ',
+          description: 'super mega answer',
+          rightAnswer: false
+        }
+      ]
+    },
+    {
+      id: 2,
+      name: 'super mega question#2',
+      description: 'Чаво?',
+      image: 'beauty',
+      answers: [
+        {
+          id: 3,
+          name: 'WTF?',
+          description: 'super mega answer',
+          rightAnswer: false
+        },
+        {
+          id: 4,
+          name: 'Так то!',
           description: 'super mega answer',
           rightAnswer: true
         }

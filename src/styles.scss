@@ -3,7 +3,8 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.beauty {
-  margin: 10px;
-  font-size: large;
+// Custom themable components
+@import "src/app/view/loader-view/loader-view.component";
+@mixin custom-components-theme($theme) {
+  @include loader-theme($theme);
 }

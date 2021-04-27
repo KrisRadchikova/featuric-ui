@@ -9,7 +9,6 @@ import {TestService} from '../../serivce/test.service';
 import {AnswerService} from '../../serivce/answer.service';
 import {QuestionService} from '../../serivce/question.service';
 import {CountdownEvent} from 'ngx-countdown';
-import {Globals} from '../../global';
 
 // TODO change names
 
@@ -48,7 +47,7 @@ export class PlayViewComponent implements OnInit {
     this.isBlockAnswers = false;
     this.timeIsOver = false;
     // this.questionService.getQuestionsByTestId(this.test.id).subscribe(questions => {
-    this.questions = Globals.questions;
+    this.questions = this.test.questions;
     this.question = this.questions[this.questionNumber];
     this.quantityQuestion = this.questions.length;
     for (let i = 0; i < this.quantityQuestion; i++) {

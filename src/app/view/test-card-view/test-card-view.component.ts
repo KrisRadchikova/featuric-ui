@@ -4,6 +4,7 @@ import {Category} from '../../model/category';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogContentExampleDialogComponent} from './dialog/dialog-content-example-dialog';
+import {CategoryService} from '../../serivce/category.service';
 
 @Component({
   selector: 'app-test-card-view',
@@ -19,10 +20,15 @@ export class TestCardViewComponent implements OnInit {
   categories: Category[];
 
   constructor(public dialog: MatDialog,
-              private router: Router) {
+              private router: Router,
+              private categoryService: CategoryService) {
   }
 
   ngOnInit(): void {
+  }
+
+  getCategory(): void {
+    this.categoryService.getAll().subscribe();
   }
 
   openDialog(startTest: Test): void {

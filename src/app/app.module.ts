@@ -23,6 +23,7 @@ import {CountdownModule} from 'ngx-countdown';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import {LoaderService} from './serivce/loader.service';
 
@@ -58,7 +59,8 @@ import { PlayViewComponent } from './view/play-view/play-view.component';
     CountdownModule,
     MatRadioModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     LoaderService,
