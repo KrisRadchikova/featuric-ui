@@ -19,18 +19,20 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
-import {CountdownModule} from 'ngx-countdown';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
+import {CountdownModule} from 'ngx-countdown';
+import {ClipboardModule} from 'ngx-clipboard';
+
 import {LoaderService} from './serivce/loader.service';
 
 import {LoaderInterceptor} from './serivce/interceptors/loader.interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { TestBeginningComponent } from './page/test-beginning/test-beginning.component';
-import { PlayViewComponent } from './view/play-view/play-view.component';
+import {TestBeginningComponent} from './page/test-beginning/test-beginning.component';
+import {PlayViewComponent} from './view/play-view/play-view.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { PlayViewComponent } from './view/play-view/play-view.component';
     MatRadioModule,
     FormsModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ClipboardModule
   ],
   providers: [
     LoaderService,

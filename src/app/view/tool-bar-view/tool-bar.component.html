@@ -3,8 +3,10 @@
     <span>Featuric</span>
     <a class="name-margin size" mat-button routerLink="/start">Главная</a>
     <a class="size" mat-button routerLink="/tests_catalog">Тесты</a>
+    <a class="size" mat-button routerLink="/tests_catalog">Статистика</a>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" (click)="copyLink()">
+<!--    TODO change path-->
+    <button mat-icon-button ngxClipboard [cbContent]="'http://localhost:4200/start'" (click)="copyLink()">
       <mat-icon>share</mat-icon>
     </button>
   </mat-toolbar>

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Category} from '../../model/category';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-tool-bar',
@@ -14,12 +15,16 @@ export class ToolBarComponent implements OnInit {
   @Input()
   categories: Category[];
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
   }
 
   copyLink(): void {
+    this._snackBar.open('Ссылка на главную страницу скопирована.', 'CTRL + C', {
+      duration: 2000,
+    });
+
   }
 }

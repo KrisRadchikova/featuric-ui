@@ -20,15 +20,10 @@ export class TestCardViewComponent implements OnInit {
   categories: Category[];
 
   constructor(public dialog: MatDialog,
-              private router: Router,
-              private categoryService: CategoryService) {
+              private router: Router) {
   }
 
   ngOnInit(): void {
-  }
-
-  getCategory(): void {
-    this.categoryService.getAll().subscribe();
   }
 
   openDialog(startTest: Test): void {

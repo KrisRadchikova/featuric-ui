@@ -1,9 +1,9 @@
 <div class="root-container">
   <div *ngFor="let test of tests">
     <div class="card-container">
-      <mat-card class="test-card">
+      <mat-card class="test-card threed">
         <div class="test-name">{{test?.name}}</div>
-        <button mat-raised-button color="primary" class="start-button" (click)="getCategory()">Пройти</button>
+        <button mat-raised-button color="primary" class="start-button" (click)="openDialog(test)">Пройти</button>
       </mat-card>
     </div>
   </div>
