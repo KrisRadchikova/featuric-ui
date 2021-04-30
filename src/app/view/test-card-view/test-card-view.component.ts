@@ -3,8 +3,7 @@ import {Test} from '../../model/test';
 import {Category} from '../../model/category';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {DialogContentExampleDialogComponent} from './dialog/dialog-content-example-dialog';
-import {CategoryService} from '../../serivce/category.service';
+import {DialogContentComponent} from './dialog/dialog-content';
 
 @Component({
   selector: 'app-test-card-view',
@@ -27,7 +26,7 @@ export class TestCardViewComponent implements OnInit {
   }
 
   openDialog(startTest: Test): void {
-    const dialogRef = this.dialog.open(DialogContentExampleDialogComponent, {
+    const dialogRef = this.dialog.open(DialogContentComponent, {
       data: {test: startTest}
     });
 

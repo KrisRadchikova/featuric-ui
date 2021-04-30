@@ -1,6 +1,6 @@
-<div class="beauty" style="font-weight: bold">Категории:</div>
+<div class="beauty" style="font-weight: bold">{{ 'SIDENAV.CATEGORY' | translate }}</div>
 <hr>
-<div class="beauty">Все тесты</div>
+<div class="beauty">{{ 'SIDENAV.ALL' | translate }}</div>
 <div class="beauty" *ngFor="let category of categories">
   {{category?.name}}
 </div>

@@ -1,5 +1,28 @@
 <app-tool-bar
-  [isSidenav]=false>
+  [isSidenav]=false xmlns="http://www.w3.org/1999/html">
 </app-tool-bar>
 
-<!--  content-->
+<div class="content">
+  <img class="logo-image" mat-card-image src="assets/images/logo_black.png" alt="Logo">
+  <div class="text">{{ 'HOME.ABOUT_SITE' | translate}}</div>
+  <div class="about">
+    <div class="contact">
+      <div><h2>{{ 'HOME.CONTACT' | translate}}</h2></div>
+      <div>
+        <a href="https://instagram.com/bledsucks?igshid=5rwahbo1xq70" target="_blank">
+          <img class="contact-logo" mat-card-image src="assets/images/instagram.png" alt="Logo">
+        </a>
+      </div>
+      <div>
+        <a href="https://vk.com/ambergein" target="_blank">
+          <img class="contact-logo" mat-card-image src="assets/images/vk.png" alt="Logo">
+        </a>
+      </div>
+      <div>
+        <a href="https://www.linkedin.com/in/kristina-balvanovich-52429120b/" target="_blank">
+          <img class="contact-logo" mat-card-image src="assets/images/linkedin.png" alt="Logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

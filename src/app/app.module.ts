@@ -11,7 +11,9 @@ import {LoaderViewComponent} from './view/loader-view/loader-view.component';
 import {TestsCatalogPageComponent} from './page/tests-catalog-page/tests-catalog-page.component';
 import {TestCardViewComponent} from './view/test-card-view/test-card-view.component';
 import {CategoryViewComponent} from './view/category-view/category-view.component';
-import {DialogContentExampleDialogComponent} from './view/test-card-view/dialog/dialog-content-example-dialog';
+import {DialogContentComponent} from './view/test-card-view/dialog/dialog-content';
+import {TestBeginningComponent} from './page/test-beginning/test-beginning.component';
+import {PlayViewComponent} from './view/play-view/play-view.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -26,13 +28,18 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import {CountdownModule} from 'ngx-countdown';
 import {ClipboardModule} from 'ngx-clipboard';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {LoaderService} from './serivce/loader.service';
 
 import {LoaderInterceptor} from './serivce/interceptors/loader.interceptor';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {TestBeginningComponent} from './page/test-beginning/test-beginning.component';
-import {PlayViewComponent} from './view/play-view/play-view.component';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -43,7 +50,7 @@ import {PlayViewComponent} from './view/play-view/play-view.component';
     TestsCatalogPageComponent,
     TestCardViewComponent,
     CategoryViewComponent,
-    DialogContentExampleDialogComponent,
+    DialogContentComponent,
     TestBeginningComponent,
     PlayViewComponent
   ],
@@ -63,7 +70,16 @@ import {PlayViewComponent} from './view/play-view/play-view.component';
     FormsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    ClipboardModule
+    ClipboardModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      defaultLanguage: 'ru'
+    })
   ],
   providers: [
     LoaderService,

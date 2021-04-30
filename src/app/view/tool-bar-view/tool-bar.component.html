@@ -1,24 +1,29 @@
 <div class="root-container">
   <mat-toolbar color="primary" class="main-toolbar">
-    <span>Featuric</span>
-    <a class="name-margin size" mat-button routerLink="/start">Главная</a>
-    <a class="size" mat-button routerLink="/tests_catalog">Тесты</a>
-    <a class="size" mat-button routerLink="/tests_catalog">Статистика</a>
+    <img mat-card-image src="assets/images/logo_white.png" style="width: 150px" alt="Logo">
+    <a class="name-margin size" mat-button routerLink="/start">{{ 'TOOLBAR.HOME' | translate }}</a>
+    <a class="size" mat-button routerLink="/tests_catalog">{{ 'TOOLBAR.TESTS' | translate }}</a>
+    <a class="size" mat-button routerLink="/tests_catalog">{{ 'TOOLBAR.STATISTICS' | translate }}</a>
+    <a class="size" mat-button routerLink="/tests_catalog">{{ 'TOOLBAR.CREATE' | translate }}</a>
     <span class="example-spacer"></span>
-<!--    TODO change path-->
+    <!--    TODO change path-->
+    <button class="size" mat-button (click)="changeLang()">{{ 'BUTTON.LANG' | translate}}</button>
+    <button mat-icon-button>
+      <mat-icon>person</mat-icon>
+    </button>
     <button mat-icon-button ngxClipboard [cbContent]="'http://localhost:4200/start'" (click)="copyLink()">
       <mat-icon>share</mat-icon>
     </button>
   </mat-toolbar>
-    <mat-sidenav-container *ngIf="isSidenav" class="sidenav-container" autosize>
-      <mat-sidenav mode="side" opened="true">
-        <app-category-view
-          [categories]="categories">
-        </app-category-view>
-      </mat-sidenav>
+  <mat-sidenav-container *ngIf="isSidenav" class="sidenav-container" autosize>
+    <mat-sidenav mode="side" opened="true">
+      <app-category-view
+        [categories]="categories">
+      </app-category-view>
+    </mat-sidenav>
 
-      <ng-content></ng-content>
+    <ng-content></ng-content>
 
-    </mat-sidenav-container>
+  </mat-sidenav-container>
 </div>
 

@@ -1,0 +1,37 @@
+{
+  "TOOLBAR": {
+    "HOME": "Home",
+    "TESTS": "Tests",
+    "STATISTICS": "Statistics",
+    "CREATE": "Create"
+  },
+  "SNACKBAR": {
+    "MESSAGE": "Homepage link copied.",
+    "ACTION": "CTRL+C"
+  },
+  "BUTTON": {
+    "LANG": "En"
+  },
+  "SIDENAV": {
+    "CATEGORY": "Category:",
+    "ALL": "All categories"
+  },
+  "TEST_CARD": {
+    "REPLY": "Reply"
+  },
+  "PLAY": {
+    "QUESTION": "Question",
+    "OF": "of",
+    "BUTTON_REPLY": "Reply",
+    "BUTTON_STATISTICS": "Statistics",
+    "BUTTON_NEXT": "Next"
+  },
+  "DIALOG_CONTENT": {
+    "BUTTON_CLOSE": "Close",
+    "BUTTON_START": "Start"
+  },
+  "HOME": {
+    "ABOUT_SITE": "Добро фппывввввввввввввввлоыволпр упруырпуырпуыпуылрпуыпо  фцлорауырлп у  фаурполуылопруы  уу уыр пру  уа  раварураруыа у  уупаоуыаыупауы а  пупа ыпау пау ыопаоыупауырпа упаоыа ыуа ыупауы орап",
+    "CONTACT": "Contacts"
+  }
+}

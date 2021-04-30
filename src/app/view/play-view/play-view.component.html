@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header">
     <h1>
-      Вопрос {{questionNumber + 1}} из {{quantityQuestion}}
+      {{ 'PLAY.QUESTION' | translate }} {{questionNumber + 1}} {{ 'QUESTION.OF' | translate }} {{quantityQuestion}}
     </h1>
   </div>
   <mat-card class="card">
@@ -33,25 +33,25 @@
     <div class="action">
       <div *ngIf="answer && !timeIsOver; else blockButtonReply" class="myButtons">
         <button mat-flat-button color="warn" (click)="addAnswer()"
-                disabled="{{isBlockAnswers}}">Ответить
+                disabled="{{isBlockAnswers}}">{{ 'QUESTION.BUTTON_REPLY' | translate }}
         </button>
       </div>
       <ng-template #blockButtonReply>
         <div *ngIf="answeredQuestion == quantityQuestion; else nextQuestionOrBlockButtonReply">
           <button mat-flat-button class="statistics" color="accent">
-            Статистика
+            {{ 'QUESTION.BUTTON_STATISTICS' | translate }}
           </button>
         </div>
       </ng-template>
       <ng-template #nextQuestionOrBlockButtonReply>
         <div *ngIf="timeIsOver; else timerIsOver">
           <button mat-flat-button color="primary"
-                  (click)="setNextQuestion();timer.restart();">Далее
+                  (click)="setNextQuestion();timer.restart();">{{ 'QUESTION.BUTTON_NEXT' | translate }}
           </button>
         </div>
         <ng-template #timerIsOver>
           <button mat-flat-button class="myButtons" color="warn"
-                  disabled>Ответить
+                  disabled>{{ 'QUESTION.BUTTON_REPLY' | translate }}
           </button>
         </ng-template>
       </ng-template>

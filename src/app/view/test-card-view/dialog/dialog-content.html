@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{data?.test?.name}}</h2>
+<mat-dialog-content class="mat-typography">
+  <p class="description">{{data?.test?.description}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">{{ 'DIALOG_CONTENT.BUTTON_CLOSE' | translate }}</button>
+  <button mat-button [mat-dialog-close]="data.test.id" mat-dialog-close>{{ 'DIALOG_CONTENT.BUTTON_START' | translate }}</button>
+</mat-dialog-actions>

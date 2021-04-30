@@ -17,7 +17,6 @@ export class QuestionService {
   constructor(private http: HttpClient) {
   }
 
-  // TODO add method in back
   getQuestionsByTestId(testId: number): Observable<Question[]> {
     return this.http.get<Question[]>(this.url + testId);
   }
