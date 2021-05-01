@@ -33,5 +33,23 @@
   "HOME": {
     "ABOUT_SITE": "Добро фппывввввввввввввввлоыволпр упруырпуырпуыпуылрпуыпо  фцлорауырлп у  фаурполуылопруы  уу уыр пру  уа  раварураруыа у  уупаоуыаыупауы а  пупа ыпау пау ыопаоыупауырпа упаоыа ыуа ыупауы орап",
     "CONTACT": "Contacts"
+  },
+  "LOGIN": {
+    "SIGN_IN": "Sign In",
+    "SIGN_UP": "Sign Up",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "LOGIN_NAME": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "REMEMBER_ME": "Remember Me!",
+    "LOGIN_WITH_GOOGLE": "Login with Google",
+    "FIRST_NAME_IS_REQUIRED": "First name is required",
+    "LAST_NAME_IS_REQUIRED": "Last name is required",
+    "LOGIN_IS_REQUIRED": "Login is required",
+    "EMAIL_IS_REQUIRED": "Email is required",
+    "PASSWORD_IS_REQUIRED": "Password is required",
+    "PASSWORD_MINLENGTH": "Password must be of length 5",
+    "RE_ENTER_PASSWORD": "Re-Enter Password is required"
   }
 }

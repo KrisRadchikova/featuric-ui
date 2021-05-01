@@ -5,139 +5,33 @@
 <div class="content">
   <div class="login-page">
     <mat-card class="mat-elevation-z12 login-card">
-      <mat-card-title class="login-card-title">SignIn/SignUp</mat-card-title>
+      <mat-card-title class="login-card-title">
+        {{ 'LOGIN.SIGN_IN' | translate}}/{{'LOGIN.SIGN_UP' | translate}}
+      </mat-card-title>
       <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
-        <mat-tab label="Sign In">
+        <mat-tab label="{{'LOGIN.SIGN_IN' | translate}}">
           <mat-card-content class="login-card-content">
             <form action="">
               <mat-form-field class="login-form-field">
                 <label>
                   <input
                     matInput
-                    placeholder="Email"
+                    placeholder="{{'LOGIN.EMAIL' | translate}}"
                     required
                     name="email"
                     ngModel
                     #email="ngModel">
                 </label>
-                <mat-error *ngIf="email.invalid">Email is required</mat-error>
+                <mat-error *ngIf="email.invalid">
+                  {{'LOGIN.EMAIL_IS_REQUIRED' | translate}}
+                </mat-error>
                 <mat-icon matSuffix>email</mat-icon>
               </mat-form-field>
               <mat-form-field class="login-form-field">
                 <label>
                   <input
                     matInput
-                    placeholder="Password"
-                    type="password"
-                    required
-                    minlength="6"
-                    name="password"
-                    ngModel
-                    #password="ngModel">
-                </label>
-                <mat-error
-                  *ngIf="password.errors && password.errors.required">
-                  Password is required
-                </mat-error>
-                <mat-error
-                  *ngIf="password.errors && password.errors.minlength">
-                  Password must be of length 6
-                </mat-error>
-                <mat-icon matSuffix>lock</mat-icon>
-              </mat-form-field>
-              <mat-checkbox class="login-checkbox">Remember Me!</mat-checkbox>
-              <button
-                mat-raised-button
-                color="primary"
-                class="login-button">
-                Sign In
-              </button>
-
-              <button
-                mat-raised-button
-                class="login-button">
-                Login with Google
-              </button>
-            </form>
-          </mat-card-content>
-        </mat-tab>
-        <mat-tab label="Sign Up">
-          <mat-card-content class="login-card-content">
-            <form action="">
-
-              <mat-form-field class="login-form-field">
-                <label>
-                  <input
-                    matInput
-                    placeholder="First Name"
-                    required
-                    name="username"
-                    ngModel
-                    #firstName="ngModel">
-                </label>
-                <mat-icon matSuffix>perm_identity</mat-icon>
-                <mat-error
-                  *ngIf="firstName.invalid">
-                  First name is required
-                </mat-error>
-
-              </mat-form-field>
-
-              <mat-form-field class="login-form-field">
-                <label>
-                  <input
-                    matInput
-                    placeholder="Last Name"
-                    required
-                    name="lastname"
-                    ngModel
-                    #lastName="ngModel">
-                </label>
-                <mat-icon matSuffix>perm_identity</mat-icon>
-                <mat-error
-                  *ngIf="lastName.invalid">
-                  Last name is required
-                </mat-error>
-
-              </mat-form-field>
-
-              <mat-form-field class="login-form-field">
-                <label>
-                  <input
-                    matInput
-                    placeholder="Login"
-                    required
-                    name="login"
-                    ngModel
-                    #loginName="ngModel">
-                </label>
-                <mat-icon matSuffix>perm_identity</mat-icon>
-                <mat-error
-                  *ngIf="loginName.invalid">
-                  Login is required
-                </mat-error>
-
-              </mat-form-field>
-
-              <mat-form-field class="login-form-field">
-                <label>
-                  <input
-                    matInput
-                    placeholder="Email"
-                    required
-                    name="email"
-                    ngModel
-                    #email="ngModel">
-                </label>
-                <mat-error *ngIf="email.invalid">Email is required</mat-error>
-                <mat-icon matSuffix>email</mat-icon>
-              </mat-form-field>
-
-              <mat-form-field class="login-form-field">
-                <label>
-                  <input
-                    matInput
-                    placeholder="Password"
+                    placeholder="{{'LOGIN.PASSWORD' | translate}}"
                     type="password"
                     required
                     minlength="5"
@@ -147,11 +41,125 @@
                 </label>
                 <mat-error
                   *ngIf="password.errors && password.errors.required">
-                  Password is required
+                  {{'LOGIN.PASSWORD_IS_REQUIRED' | translate}}
                 </mat-error>
                 <mat-error
                   *ngIf="password.errors && password.errors.minlength">
-                  Password must be of length 5
+                  {{'LOGIN.PASSWORD_MINLENGTH' | translate}}
+                </mat-error>
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+              <mat-checkbox class="login-checkbox">
+                {{'LOGIN.REMEMBER_ME' | translate}}
+              </mat-checkbox>
+              <button
+                mat-raised-button
+                color="primary"
+                class="login-button">
+                {{'LOGIN.SIGN_IN' | translate}}
+              </button>
+
+              <button
+                mat-raised-button
+                class="login-button">
+                {{'LOGIN.LOGIN_WITH_GOOGLE' | translate}}
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+        <mat-tab label="{{'LOGIN.SIGN_UP' | translate}}">
+          <mat-card-content class="login-card-content">
+            <form action="">
+
+              <mat-form-field class="login-form-field">
+                <label>
+                  <input
+                    matInput
+                    placeholder="{{'LOGIN.FIRST_NAME' | translate}}"
+                    required
+                    name="firstname"
+                    ngModel
+                    #firstName="ngModel">
+                </label>
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="firstName.invalid">
+                  {{'LOGIN.FIRST_NAME_IS_REQUIRED' | translate}}
+                </mat-error>
+
+              </mat-form-field>
+
+              <mat-form-field class="login-form-field">
+                <label>
+                  <input
+                    matInput
+                    placeholder="{{'LOGIN.LAST_NAME' | translate}}"
+                    required
+                    name="lastname"
+                    ngModel
+                    #lastName="ngModel">
+                </label>
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="lastName.invalid">
+                  {{'LOGIN.LAST_NAME_IS_REQUIRED' | translate}}
+                </mat-error>
+
+              </mat-form-field>
+
+              <mat-form-field class="login-form-field">
+                <label>
+                  <input
+                    matInput
+                    placeholder="{{'LOGIN.LOGIN_NAME' | translate}}"
+                    required
+                    name="login"
+                    ngModel
+                    #loginName="ngModel">
+                </label>
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="loginName.invalid">
+                  {{'LOGIN.LOGIN_IS_REQUIRED' | translate}}
+                </mat-error>
+
+              </mat-form-field>
+
+              <mat-form-field class="login-form-field">
+                <label>
+                  <input
+                    matInput
+                    placeholder="{{'LOGIN.EMAIL' | translate}}"
+                    required
+                    name="email"
+                    ngModel
+                    #email="ngModel">
+                </label>
+                <mat-error *ngIf="email.invalid">
+                  {{'LOGIN.EMAIL_IS_REQUIRED' | translate}}
+                </mat-error>
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+
+              <mat-form-field class="login-form-field">
+                <label>
+                  <input
+                    matInput
+                    placeholder="{{'LOGIN.PASSWORD' | translate}}"
+                    type="password"
+                    required
+                    minlength="5"
+                    name="password"
+                    ngModel
+                    #password="ngModel">
+                </label>
+                <mat-error
+                  *ngIf="password.errors && password.errors.required">
+                  {{'LOGIN.PASSWORD_IS_REQUIRED' | translate}}
+                </mat-error>
+                <mat-error
+                  *ngIf="password.errors && password.errors.minlength">
+                  {{'LOGIN.PASSWORD_MINLENGTH' | translate}}
                 </mat-error>
                 <mat-icon matSuffix>lock</mat-icon>
 
@@ -161,7 +169,7 @@
                 <label>
                   <input
                     matInput
-                    placeholder="Password"
+                    placeholder="{{'LOGIN.PASSWORD' | translate}}"
                     type="password"
                     required
                     minlength="5"
@@ -171,7 +179,7 @@
                 </label>
                 <mat-error
                   *ngIf="repassword.errors && repassword.errors.required">
-                  Re-Enter Password is required
+                  {{'LOGIN.RE_ENTER_PASSWORD' | translate}}
                 </mat-error>
                 <mat-icon matSuffix>lock</mat-icon>
               </mat-form-field>
@@ -179,7 +187,7 @@
                 mat-raised-button
                 color="primary"
                 class="login-button">
-                Sign Up
+                {{'LOGIN.SIGN_UP' | translate}}
               </button>
             </form>
           </mat-card-content>
