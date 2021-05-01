@@ -1,6 +1,6 @@
 <div class="root-container">
   <mat-toolbar color="primary" class="main-toolbar">
-    <img mat-card-image src="assets/images/logo_white.png" style="width: 150px" alt="Logo">
+    <img class="logo" src="assets/images/logo_white.png" alt="Logo">
     <a class="name-margin size" mat-button routerLink="/start">{{ 'TOOLBAR.HOME' | translate }}</a>
     <a class="size" mat-button routerLink="/tests_catalog">{{ 'TOOLBAR.TESTS' | translate }}</a>
     <a class="size" mat-button routerLink="/tests_catalog">{{ 'TOOLBAR.STATISTICS' | translate }}</a>
@@ -8,7 +8,7 @@
     <span class="example-spacer"></span>
     <!--    TODO change path-->
     <button class="size" mat-button (click)="changeLang()">{{ 'BUTTON.LANG' | translate}}</button>
-    <button mat-icon-button>
+    <button mat-icon-button routerLink="/login">
       <mat-icon>person</mat-icon>
     </button>
     <button mat-icon-button ngxClipboard [cbContent]="'http://localhost:4200/start'" (click)="copyLink()">

@@ -14,6 +14,7 @@ import {CategoryViewComponent} from './view/category-view/category-view.componen
 import {DialogContentComponent} from './view/test-card-view/dialog/dialog-content';
 import {TestBeginningComponent} from './page/test-beginning/test-beginning.component';
 import {PlayViewComponent} from './view/play-view/play-view.component';
+import {LoginComponent} from './page/login/login.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -22,9 +23,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import {CountdownModule} from 'ngx-countdown';
 import {ClipboardModule} from 'ngx-clipboard';
@@ -52,7 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CategoryViewComponent,
     DialogContentComponent,
     TestBeginningComponent,
-    PlayViewComponent
+    PlayViewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +78,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatProgressSpinnerModule,
     ClipboardModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTabsModule,
+    MatCheckboxModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -79,7 +89,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       },
       defaultLanguage: 'ru'
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [
     LoaderService,
